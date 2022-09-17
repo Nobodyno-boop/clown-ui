@@ -10,7 +10,7 @@ on:
 concurrency: ${{ github.ref }}
 
 jobs:
-  build:
+  docs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out the code
