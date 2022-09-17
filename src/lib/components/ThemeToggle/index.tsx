@@ -1,7 +1,17 @@
-import type { FC } from 'react'
+import type { ComponentProps, FC } from 'react'
 import { useContext } from 'react'
 import { ThemeContext, useTheme } from '../Clownui/ThemeContext'
-import { MdWbSunny, MdModeNight } from 'react-icons/md'
+import {
+  MdWbSunny,
+  MdOutlineWbSunny,
+  MdModeNight,
+  MdOutlineModeNight,
+} from 'react-icons/md'
+
+export interface ThemeToggleProps
+  extends Omit<ComponentProps<'button'>, 'className'> {
+  iconOutline?: boolean
+}
 
 /**
  * ## Usage
@@ -14,17 +24,26 @@ import { MdWbSunny, MdModeNight } from 'react-icons/md'
  *
  * @returns
  */
-export const ThemeToggle: FC = () => {
+export const ThemeToggle: FC<ThemeToggleProps> = (props) => {
   const { mode, toggleMode } = useContext(ThemeContext)
   const theme = useTheme().theme.themeToggle
   return (
     <>
       <button className={theme.base} onClick={toggleMode}>
         {mode === 'dark' ? (
-          <MdModeNight
-            aria-label="Currently dark mode"
-            className={theme.icon}
-          ></MdModeNight>
+          props.iconOutline ? (
+            <MdOutlineModeNight
+              aria-label="Currently dark mode"
+              className={theme.icon}
+            ></MdOutlineModeNight>
+          ) : (
+            <MdModeNight
+              aria-label="Currently dark mode"
+              className={theme.icon}
+            ></MdModeNight>
+          )
+        ) : props.iconOutline ? (
+          <MdOutlineWbSunny className={theme.icon}></MdOutlineWbSunny>
         ) : (
           <MdWbSunny className={theme.icon}></MdWbSunny>
         )}

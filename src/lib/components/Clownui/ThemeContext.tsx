@@ -33,7 +33,7 @@ export const ThemeProvider: FC<ThemeProviderProps> = ({ children, value }) => {
 export function useTheme(): ThemeProps {
   return useContext(ThemeContext)
 }
-/** @ts-lint-ignore */
+
 export const useThemeMode = (): [
   Mode,
   React.Dispatch<React.SetStateAction<Mode>>,

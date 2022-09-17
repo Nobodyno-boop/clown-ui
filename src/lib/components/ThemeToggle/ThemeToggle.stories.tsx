@@ -16,4 +16,6 @@ const Template: ComponentStory<typeof ThemeToggle> = (args) => (
 
 export const DefaultThemeToggle = Template.bind({})
 DefaultThemeToggle.storyName = 'Default'
-DefaultThemeToggle.args = {}
+DefaultThemeToggle.args = {
+  iconOutline: false,
+}
