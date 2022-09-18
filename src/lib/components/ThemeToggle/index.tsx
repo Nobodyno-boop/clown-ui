@@ -13,6 +13,11 @@ export interface ThemeToggleProps
   iconOutline?: boolean
 }
 
+export interface ThemeToggleTheme {
+  base: string
+  icon: string
+}
+
 /**
  * ## Usage
  *

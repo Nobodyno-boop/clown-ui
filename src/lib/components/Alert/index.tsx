@@ -7,7 +7,7 @@ import { useTheme } from '../Clownui/ThemeContext'
 export interface AlertProps
   extends PropsWithChildren<Omit<ComponentProps<'div'>, 'color'>> {
   rounded?: boolean
-  border?: keyof AlertBorder
+  border?: keyof AlertBorder | string
   icon?: ChooseIcon | FC<ComponentProps<'svg'>>
   children?: ReactNode
   color: 'info' | 'success' | 'warning' | 'error'
@@ -72,7 +72,7 @@ export const Alert: FC<AlertProps> = ({
         theme.base,
         theme.color[color],
         rounded && theme.rounded,
-        border && theme.border[border]
+        border && (theme.border as any)[border]
       )}
       role="alert"
     >

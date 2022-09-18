@@ -20,6 +20,7 @@ export default {
 const Template: ComponentStory<typeof Alert> = (args) => (
   <Alert {...args}></Alert>
 )
+
 const TemplateAllColors: ComponentStory<typeof Alert> = (args) => (
   <div className="flex flex-col gap-2">
     <Alert {...args} color="info"></Alert>
