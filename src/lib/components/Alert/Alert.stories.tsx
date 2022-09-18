@@ -20,10 +20,30 @@ export default {
 const Template: ComponentStory<typeof Alert> = (args) => (
   <Alert {...args}></Alert>
 )
+const TemplateAllColors: ComponentStory<typeof Alert> = (args) => (
+  <div className="flex flex-col gap-2">
+    <Alert {...args} color="info"></Alert>
+    <Alert {...args} color="success"></Alert>
+    <Alert {...args} color="warning"></Alert>
+    <Alert {...args} color="error"></Alert>
+  </div>
+)
 
 export const DefaultAlert = Template.bind({})
 DefaultAlert.storyName = 'Default'
 DefaultAlert.args = {
+  children: (
+    <>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta minima
+      rerum veritatis optio atque impedit, enim quisquam, excepturi consectetur
+      quaerat odio hic, natus aspernatur ex architecto quas dolor nemo alias.
+    </>
+  ),
+}
+
+export const AllColors = TemplateAllColors.bind({})
+AllColors.storyName = 'All colors'
+AllColors.args = {
   children: (
     <>
       Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta minima

@@ -14,21 +14,19 @@ export const DefaultTheme: ClownuiTheme = {
     closeButton: {
       base: '-mx-1.5 -my-1.5 ml-auto inline-flex h-8 w-8 rounded-lg p-1.5 focus:ring-5',
       color: {
-        info: 'bg-cblue-100 hover:bg-cblue-200 focus:ring-cblue-400 dark:text-white text-cblue-800 border-cblue-500',
+        info: 'bg-cblue-50 hover:bg-cblue-50 focus:ring-cblue-400 text-slate-900',
         success:
-          'bg-cgreen-200 dark:text-white text-cgreen-800 border-cgreen-500',
+          'bg-cgreen-200 hover:bg-cgreen-300 text-slate-900  border-cgreen-500',
         warning:
-          'bg-cyellow-200 dark:text-white text-cyellow-800 border-cyellow-500',
-        error: 'bg-rose-600 dark:text-white text-slate-900 border-rose-900',
+          'bg-cyellow-100 hover:bg-cyellow-200 text-slate-900 border-cyellow-500',
+        error: 'bg-rose-400 hover:bg-rose-500 text-slate-900  border-rose-900',
       },
     },
     color: {
-      info: 'bg-cblue-100 dark:text-white text-cblue-800 border-cblue-500',
-      success:
-        'bg-cgreen-200 dark:text-white text-cgreen-800 border-cgreen-500',
-      warning:
-        'bg-cyellow-200 dark:text-white text-cyellow-800 border-cyellow-500',
-      error: 'bg-rose-600 dark:text-white text-slate-900 border-rose-900',
+      info: 'bg-cblue-50 text-neutral-900 border-cblue-500',
+      success: 'bg-cgreen-200 text-neutral-800 border-cgreen-500',
+      warning: 'bg-cyellow-100 text-neutral-800 border-cyellow-500',
+      error: 'bg-rose-400  text-neutral-800 border-rose-900',
     },
   },
   themeToggle: {

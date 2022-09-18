@@ -29,7 +29,11 @@ export const ThemeToggle: FC<ThemeToggleProps> = (props) => {
   const theme = useTheme().theme.themeToggle
   return (
     <>
-      <button className={theme.base} onClick={toggleMode}>
+      <button
+        className={theme.base}
+        onClick={toggleMode}
+        aria-label="Toggle theme mode"
+      >
         {mode === 'dark' ? (
           props.iconOutline ? (
             <MdOutlineModeNight
@@ -43,9 +47,15 @@ export const ThemeToggle: FC<ThemeToggleProps> = (props) => {
             ></MdModeNight>
           )
         ) : props.iconOutline ? (
-          <MdOutlineWbSunny className={theme.icon}></MdOutlineWbSunny>
+          <MdOutlineWbSunny
+            className={theme.icon}
+            aria-label="Currently light mode"
+          ></MdOutlineWbSunny>
         ) : (
-          <MdWbSunny className={theme.icon}></MdWbSunny>
+          <MdWbSunny
+            className={theme.icon}
+            aria-label="Currently light mode"
+          ></MdWbSunny>
         )}
       </button>
     </>

@@ -87,6 +87,7 @@ export const Alert: FC<AlertProps> = ({
             )}
             onClick={onDismiss}
             type="button"
+            aria-label="Close alert"
           >
             <IconClose className="h-5 w-5" />
           </button>
