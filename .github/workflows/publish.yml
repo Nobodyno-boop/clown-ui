@@ -25,6 +25,6 @@ jobs:
       - name: 🤡 Build Clown-ui
         run: yarn build
       - name: Publish package on NPM 📦
-        run: yarn publish
+        run: yarn ui:publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_KEY }}
