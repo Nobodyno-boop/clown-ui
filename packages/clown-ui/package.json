@@ -9,13 +9,15 @@
     "types",
     "src"
   ],
+  "private": "false",
   "scripts": {
     "build:lib": "rm -rf lib && yarn build:cjs && yarn build:esm",
     "build:lib:watch": "rm -rf lib && yarn build:cjs:watch & yarn build:esm:watch",
     "build:cjs": "tsc -p tsconfig.build.json",
     "build:esm": "tsc -p tsconfig.build.json --module esnext --declaration --outdir lib/esm",
     "build:cjs:watch": "tsc --watch -p tsconfig.build.json",
-    "build:esm:watch": "tsc --watch -p tsconfig.build.json --module esnext --declaration --outdir lib/esm"
+    "build:esm:watch": "tsc --watch -p tsconfig.build.json --module esnext --declaration --outdir lib/esm",
+    "prepublishOnly": "yarn build:lib"
   },
   "eslintConfig": {
     "extends": [

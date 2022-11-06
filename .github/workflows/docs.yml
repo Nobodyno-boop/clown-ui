@@ -22,7 +22,7 @@ jobs:
           node-version: 16
           cache: 'yarn'
       - name: Install packages
-        run: yarn install --immutable
+        run: yarn install --immutable --prefer-offline
 
       - name: 🤡 Build Clown-ui
         run: yarn build

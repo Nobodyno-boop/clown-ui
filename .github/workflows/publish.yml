@@ -21,9 +21,6 @@ jobs:
 
       - name: Install packages
         run: yarn install --immutable
-
-      - name: 🤡 Build Clown-ui
-        run: yarn build
       - name: Publish package on NPM 📦
         run: yarn ui:publish
         env:
