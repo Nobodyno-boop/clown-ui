@@ -9,7 +9,7 @@
     "types",
     "src"
   ],
-  "private": "false",
+  "description": "A clown kit ui made with react for clowns.",
   "scripts": {
     "build:lib": "rm -rf lib && yarn build:cjs && yarn build:esm",
     "build:lib:watch": "rm -rf lib && yarn build:cjs:watch & yarn build:esm:watch",

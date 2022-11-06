@@ -8,7 +8,7 @@
     "build:watch": "yarn workspace @poulpi/clown-ui build:lib:watch",
     "storybook:run": "yarn workspace storybook run storybook",
     "storybook:build": "yarn workspace storybook run storybook:build",
-    "ui:publish": "yarn publish ./packages/clown-ui/"
+    "ui:publish": "yarn workspace @poulpi/clown-ui publish"
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",
