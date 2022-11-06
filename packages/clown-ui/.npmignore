@@ -1,7 +1,3 @@
-.storybooks
-.github
 node_modules
-docs
 src
-public
 tsconfig.json

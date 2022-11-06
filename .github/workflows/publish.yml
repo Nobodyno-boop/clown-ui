@@ -1,0 +1,30 @@
+name: Publish to npm
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the code
+        uses: actions/checkout@v3
+
+      - name: Setup NodeJS 16
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16.x'
+          registry-url: 'https://registry.npmjs.org'
+          cache: 'yarn'
+          scope: '@poulpi'
+
+      - name: Install packages
+        run: yarn install --immutable
+
+      - name: 🤡 Build Clown-ui
+        run: yarn build
+      - name: Publish package on NPM 📦
+        run: yarn npm punlish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_KEY }}

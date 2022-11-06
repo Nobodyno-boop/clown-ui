@@ -6,7 +6,8 @@
   "types": "./types/index.d.ts",
   "files": [
     "lib",
-    "types"
+    "types",
+    "src"
   ],
   "scripts": {
     "build:lib": "rm -rf lib && yarn build:cjs && yarn build:esm",
@@ -43,5 +44,16 @@
     "presets": [
       "react-app"
     ]
+  },
+  "author": {
+    "name": "NobodyNo-boop"
+  },
+  "homepage": "https://github.com/Nobodyno-boop/clown-ui",
+  "bugs": {
+    "url": "https://github.com/Nobodyno-boop/clown-ui/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Nobodyno-boop/clown-ui.git"
   }
 }
