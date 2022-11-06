@@ -20,9 +20,9 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 16
-
+      - uses: c-hive/gha-yarn-cache@v2
       - name: Install packages
-        run: yarn install
+        run: yarn install --immutable
 
       - name: 🤡 Build Clown-ui
         run: yarn build
