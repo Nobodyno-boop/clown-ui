@@ -2,7 +2,7 @@
 
 A react project ui with tailwinds & storybook
 
-## Ressources used
+## Ressources use
 
 ### Spinner svg
 

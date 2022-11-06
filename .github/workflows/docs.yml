@@ -24,11 +24,14 @@ jobs:
       - name: Install packages
         run: yarn install
 
+      - name: 🤡 Build Clown-ui
+        run: yarn build
+
       - name: Build Storybook
-        run: yarn build:storybook
+        run: yarn storybook:build
 
       - name: 🚀 Deploy the website
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: docs
+          folder: ./packages/storybook/docs

@@ -11,8 +11,6 @@
 # production
 /build
 /docs
-/lib
-/types
 
 # misc
 .DS_Store
