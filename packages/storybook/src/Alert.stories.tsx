@@ -1,14 +1,15 @@
-import { Alert, IconNames } from '@poulpi/clown-ui'
+import { Alert, IconNames, Spinner } from '@poulpi/clown-ui'
 import { ComponentMeta, ComponentStory } from '@storybook/react'
-import '../src/index.css'
 
 export default {
   title: 'Components/Alert',
   component: Alert,
   args: {
     color: 'info',
+    title: 'News title',
     rounded: false,
     onDismiss: false,
+    shadow: false,
   },
   argTypes: {
     icon: { control: 'select', options: [...IconNames()] },
@@ -25,7 +26,7 @@ export default {
 } as ComponentMeta<typeof Alert>
 
 const Template: ComponentStory<typeof Alert> = (args) => (
-  <Alert {...args}></Alert>
+  <Alert title="News Title" {...args}></Alert>
 )
 
 const TemplateAllColors: ComponentStory<typeof Alert> = (args) => (
@@ -114,5 +115,18 @@ AlertWithClose.args = {
       rerum veritatis optio atque impedit, enim quisquam, excepturi consectetur
       quaerat odio hic, natus aspernatur ex architecto quas dolor nemo alias.
     </>
+  ),
+}
+
+export const AlertWithChildren = Template.bind({})
+AlertWithChildren.storyName = 'With children'
+AlertWithChildren.args = {
+  border: '',
+  title: '',
+  children: (
+    <div className="inline-flex items-center gap-2">
+      <Spinner size="lg" type="normal" />
+      Loading...
+    </div>
   ),
 }

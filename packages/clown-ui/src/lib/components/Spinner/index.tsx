@@ -1,6 +1,5 @@
 import { FC } from 'react'
 import { classname } from '../../helpers/ClassName'
-import colors from 'tailwindcss/colors'
 import { ClownuiFullSizes } from '../Clownui/ClownuiTheme'
 import { useTheme } from '../Clownui/ThemeContext'
 import { toHex } from '../../helpers/Colors'
@@ -24,7 +23,7 @@ export interface SpinnerTheme {
 }
 
 export const Spinner: FC<SpinnerProps> = ({
-  color = 'cblue-100',
+  color = 'blue-100',
   size = 'md',
   type = 'normal',
 }) => {

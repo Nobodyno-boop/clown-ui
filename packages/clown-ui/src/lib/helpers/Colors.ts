@@ -43,6 +43,9 @@ export const toHex = (s: string, darkness = 500) => {
 
   if (split.length === 1) {
     let c: any = split[0] as unknown as DefaultColors
+    if (split[0].includes('') || split[0].includes(' '))
+      return colors['indigo'][800]
+
     // if only one word
     if (tcolors.includes(split[0])) {
       return tailcolors[c][darkness]

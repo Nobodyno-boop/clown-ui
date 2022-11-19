@@ -2,8 +2,10 @@ import { ClownuiTheme } from '../components/Clownui/ClownuiTheme'
 
 export const DefaultTheme: ClownuiTheme = {
   alert: {
-    base: 'flex flex-col gap-1 p-4 text-sm font-semibold h-full',
+    base: 'bg-white dark:bg-slate-900 text-gray-400 flex flex-col gap-1 p-4 text-sm h-full',
+    title: 'font-semibold text-base',
     rounded: 'rounded-lg',
+    shadow: 'drop-shadow-md',
     icon: {
       base: 'inline flex-shrink-0 mr-3',
       iconSize: {
@@ -13,31 +15,26 @@ export const DefaultTheme: ClownuiTheme = {
       },
     },
     border: {
-      top: 'border-t-[6px]',
-      right: 'border-r-[6px]',
-      bottom: 'border-b-[6px]',
-      left: 'border-l-[6px]',
-    },
-    closeButton: {
-      base: 'mx-2 -my-1.5 ml-auto inline-flex h-8 w-8 rounded-lg p-1.5 focus:ring-5',
+      border: {
+        top: 'border-t-[6px]',
+        right: 'border-r-[6px]',
+        bottom: 'border-b-[6px]',
+        left: 'border-l-[6px]',
+      },
       color: {
-        info: 'hover:bg-blue-500 dark:hover:bg-blue-700 focus:ring-blue-500 text-slate-900 dark:text-white',
-        success:
-          'hover:bg-emerald-500 dark:hover:bg-emerald-700 text-slate-900 dark:text-white border-emerald-500',
-        warning:
-          'hover:bg-yellow-400 dark:hover:bg-yellow-600 text-slate-900 dark:text-white border-yellow-500',
-        error:
-          'hover:bg-rose-500 dark:hover:bg-rose-700 text-slate-900 dark:text-white border-rose-900',
+        info: 'border-blue-500 dark:border-blue-700',
+        success: 'border-emerald-500 dark:border-emerald-700',
+        error: 'border-rose-500 dark:border-rose-700',
+        warning: 'border-amber-300 dark:border-amber-300',
       },
     },
+    closeButton:
+      'mx-2 -my-1.5 ml-auto inline-flex h-8 w-8 rounded-lg p-1.5 focus:ring-5 dark:bg-slate-900 text-gray-400 hover:text-gray-500',
     color: {
-      info: 'bg-blue-400 dark:bg-blue-600 text-neutral-800 dark:text-white border-blue-500 dark:border-blue-700',
-      success:
-        'bg-emerald-400 dark:bg-emerald-600 text-neutral-800 dark:text-white border-emerald-500 dark:border-emerald-700',
-      warning:
-        'bg-amber-300 dark:bg-amber-500 text-neutral-800 dark:text-white border-yellow-500 dark:border-yellow-700',
-      error:
-        'bg-rose-400 dark:bg-rose-600 text-neutral-800 dark:text-white border-rose-500 dark:border-rose-700',
+      info: 'text-blue-400 dark:text-blue-600',
+      success: 'text-emerald-400 dark:text-emerald-600',
+      warning: 'text-amber-400 dark:text-amber-500',
+      error: 'text-rose-400 dark:text-rose-600',
     },
   },
   themeToggle: {
@@ -53,5 +50,16 @@ export const DefaultTheme: ClownuiTheme = {
       lg: 'w-8 h-8',
       xl: 'w-10 h-10',
     },
+  },
+  image: {
+    base: '',
+    rounded: 'rounded-lg',
+  },
+  tag: {
+    base: 'inline-flex items-center gap-1 w-max p-0.5 px-2 text-neutral',
+    rounded: 'rounded',
+    shadow: 'drop-shadow',
+    close:
+      'cursor-pointer text-neutral hover:text-gray-600 hover:transition-all',
   },
 }

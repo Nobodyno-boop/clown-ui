@@ -4,11 +4,11 @@
   ],
   "private": true,
   "scripts": {
-    "build": "yarn workspace @poulpi/clown-ui build:lib",
-    "build:watch": "yarn workspace @poulpi/clown-ui build:lib:watch",
+    "ui:build": "yarn workspace @poulpi/clown-ui build:lib",
+    "ui:build:watch": "yarn workspace @poulpi/clown-ui build:lib:watch",
+    "ui:publish": "yarn workspace @poulpi/clown-ui publish",
     "storybook:run": "yarn workspace storybook run storybook",
-    "storybook:build": "yarn workspace storybook run storybook:build",
-    "ui:publish": "yarn workspace @poulpi/clown-ui publish"
+    "storybook:build": "yarn workspace storybook run storybook:build"
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",
@@ -18,7 +18,6 @@
     "@storybook/addon-essentials": "^6.5.12",
     "@storybook/addon-interactions": "^6.5.12",
     "@storybook/addon-links": "^6.5.12",
-    "@storybook/addon-postcss": "^2.0.0",
     "@storybook/builder-webpack5": "^6.5.12",
     "@storybook/manager-webpack5": "^6.5.12",
     "@storybook/node-logger": "^6.5.12",

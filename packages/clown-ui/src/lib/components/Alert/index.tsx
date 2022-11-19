@@ -8,10 +8,12 @@ export interface AlertProps
   extends PropsWithChildren<Omit<ComponentProps<'div'>, 'color'>> {
   rounded?: boolean
   border?: keyof AlertBorder | string
+  shadow?: boolean
   icon?: ChooseIcon | FC<ComponentProps<'svg'>>
   iconSize?: keyof ClownuiSizes
   children?: ReactNode
   color?: 'info' | 'success' | 'warning' | 'error'
+  title?: string
   onDismiss?: boolean | (() => void) | undefined
   closeIcon?: ChooseIcon | FC<ComponentProps<'svg'>>
 }
@@ -25,17 +27,19 @@ export interface AlertBorder {
 
 export interface AlertTheme {
   base: string
+  title: string
   rounded: string
+  shadow: string
   icon: {
     base: string
     iconSize: ClownuiSizes
   }
-  border: AlertBorder
-  color: AlertColors
-  closeButton: {
-    base: string
+  border: {
+    border: AlertBorder
     color: AlertColors
   }
+  color: AlertColors
+  closeButton: string
 }
 
 export interface AlertColors
@@ -61,9 +65,11 @@ export const Alert: FC<AlertProps> = ({
   icon,
   iconSize = 'md',
   border,
+  shadow = false,
   color = 'info',
   onDismiss,
   closeIcon = 'MdClose',
+  title,
   children,
 }) => {
   const theme = useTheme().theme.alert
@@ -75,9 +81,10 @@ export const Alert: FC<AlertProps> = ({
     <div
       className={classname(
         theme.base,
-        theme.color[color],
         rounded && theme.rounded,
-        border && (theme.border as any)[border]
+        theme.border.color[color],
+        border && (theme.border.border as any)[border],
+        shadow && theme.shadow
       )}
       role="alert"
     >
@@ -86,17 +93,23 @@ export const Alert: FC<AlertProps> = ({
           <IconI
             className={classname(
               theme.icon.base,
+              theme.color[color],
               theme.icon.iconSize[iconSize]
             )}
           />
         )}
-        <div>{children}</div>
+
+        <div>
+          {title ? (
+            <div className={classname(theme.title, theme.color[color])}>
+              {title}
+            </div>
+          ) : null}
+          {children}
+        </div>
         {typeof onDismiss === 'function' && (
           <button
-            className={classname(
-              theme.closeButton.base,
-              theme.closeButton.color[color]
-            )}
+            className={classname(theme.closeButton)}
             onClick={onDismiss}
             type="button"
             aria-label="Close alert"
